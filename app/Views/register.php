@@ -70,19 +70,19 @@
                     </div>      
                     <div class="form-group col-lg">
                         <label for="adm_year" class="font-weight-normal">Batch (Year of Admission into class 6th) <span class="text-danger">*</span></label>
-                        <select name="" id="deptt_name" value="" class="form-control form-control-sm"></select>
-                        <?= '<span class="text-danger small font-italic">(If lateral entry please mention class 6th year)</span>' ?>
+                        <select name="<?= RegForm::batch_name() ?>" id="adm_year" value="<?= set_value(RegForm::batch_name()) ?>" class="form-control form-control-sm"></select>
+                        <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::batch_name()) .'(If lateral entry please mention class 6th year)</span>' ?>
                     </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-lg">
-                  <label for="alt_mobile" class="font-weight-normal">Duration of Time at JNV Darrang <span class="text-danger">*</span></label>
-                  <input type="text" name="" id="alt_mobile" value="" class="form-control form-control-sm" placeholder="From Year">
-                  <?= '<span class="text-danger small font-italic"></span>' ?>
+                  <label for="duration" class="font-weight-normal">Duration of Time at JNV Darrang <span class="text-danger">*</span></label>
+                  <input type="text" name="<?= RegForm::fromyr_name() ?>" id="from_year" value="<?= set_value(RegForm::fromyr_name()) ?>" class="form-control form-control-sm" placeholder="From Year">
+                  <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::fromyr_name()) .'</span>' ?>
                 </div>
                 <div class="form-group col-lg">
                   <label for="alt_mobile" class="font-weight-normal">&nbsp;</label>
-                  <input type="text" name="" id="alt_mobile" value="" class="form-control form-control-sm" placeholder="To Year">
+                  <input type="text" name="" id="to_year" value="" class="form-control form-control-sm" placeholder="To Year">
                   <?= '<span class="text-danger small font-italic"></span>' ?>
                 </div>
               </div>
