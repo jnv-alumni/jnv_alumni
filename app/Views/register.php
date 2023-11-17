@@ -81,9 +81,9 @@
                   <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::fromyr_name()) .'</span>' ?>
                 </div>
                 <div class="form-group col-lg">
-                  <label for="alt_mobile" class="font-weight-normal">&nbsp;</label>
-                  <input type="text" name="" id="to_year" value="" class="form-control form-control-sm" placeholder="To Year">
-                  <?= '<span class="text-danger small font-italic"></span>' ?>
+                  <label for="to_year" class="font-weight-normal">&nbsp;</label>
+                  <input type="text" name="<?= RegForm::toyr_name() ?>" id="to_year" value="<?= set_value(RegForm::toyr_name()) ?>" class="form-control form-control-sm" placeholder="To Year">
+                  <?= '<span class="text-danger small font-italic">'.validation_show_error(RegForm::toyr_name()).'</span>' ?>
                 </div>
               </div>
 
@@ -94,8 +94,8 @@
               </div>
               <div class="form-row">
                 <div class="form-group col">
-                  <input type="text" name="" id="vill_ward" value="" class="form-control form-control-sm" placeholder="Vill/Town/City *">
-                  <?= '<span class="text-danger small font-italic"></span>' ?>
+                  <input type="text" name="<?= RegForm::vill_name() ?>" id="vill_ward" value="<?= set_value(RegForm::vill_name()) ?>" class="form-control form-control-sm" placeholder="Vill/Town/City *">
+                  <?= '<span class="text-danger small font-italic">'.validation_show_error(RegForm::vill_name()).'</span>' ?>
                 </div>
                 <div class="form-group col">
                   <input type="text" name="" id="vill_ward" value="" class="form-control form-control-sm" placeholder="Post Office *">
