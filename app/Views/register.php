@@ -38,6 +38,8 @@
             <div class="card-body">
               <h3 class="text-center">Registration</h3>
               <hr>
+              <?= form_open("/register") ?>
+              <?= csrf_field() ?>
               <div class="form-row">
                     <div class="form-group col-lg">
                         <label for="email" class="font-weight-normal">Email <span class="text-danger">*</span></label>
@@ -98,51 +100,53 @@
                   <?= '<span class="text-danger small font-italic">'.validation_show_error(RegForm::vill_name()).'</span>' ?>
                 </div>
                 <div class="form-group col">
-                  <input type="text" name="" id="vill_ward" value="" class="form-control form-control-sm" placeholder="Post Office *">
-                  <?= '<span class="text-danger small font-italic"></span>' ?>
+                  <input type="text" name="<?= RegForm::poffice_name() ?>" id="poffice" value="<?= set_value(RegForm::poffice_name()) ?>" class="form-control form-control-sm" placeholder="Post Office *">
+                  <?= '<span class="text-danger small font-italic">'.validation_show_error(RegForm::poffice_name()).'</span>' ?>
                 </div>
                 <div class="form-group col">
-                  <input type="text" name="" id="vill_ward" value="" class="form-control form-control-sm" placeholder="Pin *">
-                  <?= '<span class="text-danger small font-italic"></span>' ?>
+                  <input type="text" name="<?= RegForm::pin_name() ?>" id="pin" value="<?= set_value(RegForm::pin_name()) ?>" class="form-control form-control-sm" placeholder="Pin *">
+                  <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::pin_name()) .'</span>' ?>
                 </div>
               </div>
               <div class="form-row">
                   <div class="form-group col">
-                    <input type="text" name="" id="vill_ward" value="" class="form-control form-control-sm" placeholder="Locality (Optional)">
-                    <?= '<span class="text-danger small font-italic"></span>' ?>
+                    <input type="text" name="<?= RegForm::locality_name() ?>" id="locality" value="<?= set_value(RegForm::locality_name()) ?>" class="form-control form-control-sm" placeholder="Locality (Optional)">
+                    <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::locality_name()) .'</span>' ?>
                   </div>
                   <div class="form-group col">
-                    <input type="text" name="" id="vill_ward" value="" class="form-control form-control-sm" placeholder="District *">
-                    <?= '<span class="text-danger small font-italic"></span>' ?>
+                    <input type="text" name="<?= RegForm::dist_name() ?>" id="district" value="<?= set_value(RegForm::dist_name()) ?>" class="form-control form-control-sm" placeholder="District *">
+                    <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::dist_name()) .'</span>' ?>
                   </div>
                   <div class="form-group col">
-                    <input type="text" name="" id="vill_ward" value="" class="form-control form-control-sm" placeholder="State *">
-                    <?= '<span class="text-danger small font-italic"></span>' ?>
+                    <input type="text" name="<?= RegForm::state_name() ?>" id="state" value="<?= set_value(RegForm::state_name()) ?>" class="form-control form-control-sm" placeholder="State *">
+                    <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::state_name()) .'</span>' ?>
                   </div>
               </div>
               <div class="form-row">
                 <div class="form-group col">
-                    <textarea name="" id="" class="form-control form-control-sm" placeholder="More Address details (if any)"></textarea>
+                    <textarea name="<?= RegForm::addressline_name() ?>" id="address_line" class="form-control form-control-sm" placeholder="More Address details (if any)"><?= set_value(RegForm::addressline_name()) ?></textarea>
+                    <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::addressline_name()) .'</span>' ?>
                 </div>
               </div>
               <div class="form-row border-top pt-2">
-                <div class="form-group col-lg-4"><label for="" class="font-weight-normal">I am currently engaged as</label></div>
-                <div class="form-group col-lg-8"><select name="" id="deptt_name" value="" class="form-control form-control-sm"></select></div>
-                <?= '<span class="text-danger small font-italic"></span>' ?>
+                <div class="form-group col-lg-4"><label for="current_occup" class="font-weight-normal">I am currently engaged as</label></div>
+                <div class="form-group col-lg-8"><select name="<?= RegForm::curr_occup_name() ?>" id="current_occup" value="<?= set_value(RegForm::curr_occup_name()) ?>" class="form-control form-control-sm"></select></div>
+                <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::curr_occup_name()) .'</span>' ?>
               </div>
 
               <div class="form-row">
                 <div class="form-group col">
-                    <textarea name="" id="" class="form-control form-control-sm" placeholder="Your suggestions, feedback, and ideas are greatly welcomed and valued."></textarea>
+                    <textarea name="<?= RegForm::feedback_name() ?>" id="feedback" class="form-control form-control-sm" placeholder="Your suggestions, feedback, and ideas are greatly welcomed and valued."><?= set_value(RegForm::feedback_name()) ?></textarea>
+                    <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::feedback_name()) .'</span>' ?>
                 </div>
               </div>
 
               <div class="form-row py-3">
                 <div class="col-lg-1"></div>
-                <div class="col-lg-10"><button type="submit" class="btn btn-success btn-block">REGISTER AND PAY REGISTRATION FEE</button></div>
+                <div class="col-lg-10"><button type="submit" class="btn btn-danger btn-block">REGISTER AND PAY REGISTRATION FEE</button></div>
                 <div class="col-lg-1"></div>
               </div>
-
+              <?= form_close() ?>
             </div>
           </div>
         </div>
