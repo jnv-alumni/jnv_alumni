@@ -7,4 +7,5 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/registration','Home::registration_form');
+$routes->post('/register','Registration::register');
 $routes->get('/pay','Home::payment');

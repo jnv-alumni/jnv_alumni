@@ -1,3 +1,4 @@
+<body>
     <!-- NAVIGATION BAR -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light shadow-sm" style="background-color: #e3f2fd;">
       <div class="container">

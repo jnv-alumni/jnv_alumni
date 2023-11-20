@@ -75,7 +75,7 @@ class RegFormUtils {
     ];
 
     const POFFICE =[
-        'name' => 'post',
+        'name' => 'post_office',
         'validation' => [
             'label'=> 'Post Office ',
             'rules'=> 'required|alpha_numeric_punct'

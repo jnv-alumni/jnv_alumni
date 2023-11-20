@@ -22,10 +22,7 @@ class Home extends BaseController
 
     //Get Registration Form
     public function registration_form(){
-        echo view('frame/header');
-        echo view('frame/navbar');
-        echo view('register');
-        echo view('frame/footer');
+        return view('register');
     }
 
     public function payment(){

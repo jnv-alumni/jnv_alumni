@@ -1,7 +1,11 @@
 <?php 
   use App\Libraries\RegFormUtils as RegForm;
   $session = session();
+
+  require_once APPPATH ."/Views/frame/header.php";
+  require_once APPPATH ."/Views/frame/navbar.php";
 ?>  
+
 
   <!-- PAGE HEADER -->
   <header id="page-header">
@@ -184,3 +188,7 @@
     </div>
   </section>
 
+<?php 
+  require_once APPPATH ."/Views/frame/footer.php";
+  require_once APPPATH ."/Views/frame/sweetAlert.php";
+?>
