@@ -80,15 +80,20 @@
                         <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::batch_name()) .'(If lateral entry please mention class 6th year)</span>' ?>
                     </div>
               </div>
+              <div class="form-row font-weight-bold mb-2 border-top pt-2">
+                    <div class="col text-center">
+                        <span class="col col-form-label col-form-label-sm">Duration of Time at JNV Darrang</span>
+                    </div>
+              </div>
               <div class="form-row">
                 <div class="form-group col-lg">
-                  <label for="duration" class="font-weight-normal">Duration of Time at JNV Darrang <span class="text-danger">*</span></label>
-                  <input type="text" name="<?= RegForm::fromyr_name() ?>" id="from_year" value="<?= set_value(RegForm::fromyr_name()) ?>" class="form-control form-control-sm" placeholder="From Year">
+                  <label for="from_year" class="font-weight-normal">From Year <span class="text-danger">*</span></label>
+                  <select name="<?= RegForm::fromyr_name() ?>" id="from_year" value="<?= set_value(RegForm::fromyr_name()) ?>" class="form-control form-control-sm"></select>
                   <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::fromyr_name()) .'</span>' ?>
                 </div>
                 <div class="form-group col-lg">
-                  <label for="to_year" class="font-weight-normal">&nbsp;</label>
-                  <input type="text" name="<?= RegForm::toyr_name() ?>" id="to_year" value="<?= set_value(RegForm::toyr_name()) ?>" class="form-control form-control-sm" placeholder="To Year">
+                  <label for="to_year" class="font-weight-normal">To Year <span class="text-danger">*</span></label>
+                  <select name="<?= RegForm::toyr_name() ?>" id="to_year" value="<?= set_value(RegForm::toyr_name()) ?>" class="form-control form-control-sm"></select>
                   <?= '<span class="text-danger small font-italic">'.validation_show_error(RegForm::toyr_name()).'</span>' ?>
                 </div>
               </div>
@@ -134,7 +139,7 @@
               </div>
               <div class="form-row border-top pt-2">
                 <div class="form-group col-lg-4"><label for="current_occup" class="font-weight-normal">I am currently engaged as</label></div>
-                <div class="form-group col-lg-8"><select name="<?= RegForm::curr_occup_name() ?>" id="current_occup" value="<?= set_value(RegForm::curr_occup_name()) ?>" class="form-control form-control-sm"></select></div>
+                <div class="form-group col-lg-8"><select name="<?= RegForm::curr_occup_name() ?>" id="current_occup" value="<?php empty(set_value(RegForm::curr_occup_name()))?"--SELECT--":set_value(RegForm::curr_occup_name()) ?>" class="form-control form-control-sm"></select></div>
                 <?= '<span class="text-danger small font-italic">'. validation_show_error(RegForm::curr_occup_name()) .'</span>' ?>
               </div>
 
@@ -191,4 +196,5 @@
 <?php 
   require_once APPPATH ."/Views/frame/footer.php";
   require_once APPPATH ."/Views/frame/sweetAlert.php";
+  require_once APPPATH ."/Views/load_dropdowns.php";
 ?>

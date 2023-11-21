@@ -22,7 +22,10 @@ class Registration extends BaseController{
     }
 
     public function listOccupations(){
-        
+        $builder = $this->db->table('occupations');
+        $query = $builder->get();
+
+        return $this->response->setJSON($query->getResult('array'));
     }
 
     public function register(){
